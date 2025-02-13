@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+.header{
+    height: 20;
+    position: sticky; 
+    height: 15%;
+    width: 99%;
+
+    background: rgb(7,7,9);
+    color: #ff5100;
+    z-index: 1000;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
