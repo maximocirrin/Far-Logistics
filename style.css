@@ -4,6 +4,9 @@
     box-sizing: border-box;
   }
   
+body{
+  background-color: #e8e8e8;
+}
 
 /* inicio nav bar */
 .offcanvas {
@@ -12,6 +15,17 @@
 
 .yellow {
     background-color: #f9ae00;
+}
+
+nav {
+  
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+/* border: 1px solid rgba(255, 255, 255, 0.3); */
 }
 /* fin nav bar */
 
@@ -51,22 +65,25 @@
 
 .carousel-caption { /* Asegurar que el texto esté centrado correctamente */
     opacity: 0;
-    transform: translateY(30px); /* Comienza más abajo */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* Centrar completamente */
-    text-align: center;
     width: 100%;
-    position: absolute; /* Asegura que flote sobre la imagen */
     z-index: 1;
     
   }
+
+  /* Anula la posición por defecto de Bootstrap y centra el contenido */
+.carousel-caption {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: 80% !important;
+  text-align: center;
+}
+
   
   
   .carousel-item.active .carousel-caption {/* Hacer que el texto aparezca cuando el slide está activo */
     opacity: 1;
-    transform: translate(-50%, -50%);
   }
 
   /* button */ 
@@ -197,59 +214,94 @@
 
   /* inicio sobre nosotros */
 
-/* Contenedor general de la sección */
-#about-us {
+  
+#about-us {/* Sección general */
     width: 100%;
     padding: 2rem;
+    background-color: #e8e8e8;
+  
   }
   
-  /* Logo centrado */
-  .logo-container {
+  
+  .logo-container {/* Logo centrado */
     text-align: center;
     margin-bottom: 2rem;
   }
   
   .logo-container img {
-    max-width: 200px; /* Ajusta según el tamaño de tu logo */
+    max-width: 200px;
   }
-  
-  /* Contenedor de todas las filas */
-  .about-rows {
+
+  .about-us-card-container{
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  /* Cada fila con dos columnas */
-  .about-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap; /* Para que en dispositivos pequeños se apilen */
-  }
-  
-  /* Alterna el orden: las filas pares mostrarán el contenido invertido */
-  .about-row:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-  
-  /* Cada columna ocupa el 50% y centra su contenido */
-  .about-col {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding: 1rem;
-    text-align: center;
+    margin-bottom: 2rem;
+
   }
   
-  /* Ajustes de las imágenes */
-  .about-col img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  
+ .about-us-card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+ }
+
+ .sobre-nosotros h3{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+ }
+
+ 
+.animate-on-scroll {/* Estado inicial: oculto y desplazado hacia abajo */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {/* Estado visible: se muestra y vuelve a su posición normal */
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.resaltar{
+  color:#f9ae00;
+}
+
+.contenedor-ventajas-comerciales{
+  width: 100%;
+  border-radius: 50px;
+  padding: 2rem;
+  gap: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgb(226,172,107);
+background: -moz-linear-gradient(90deg, rgba(226,172,107,1) 0%, rgba(249,174,0,1) 92%);
+background: -webkit-linear-gradient(90deg, rgba(226,172,107,1) 0%, rgba(249,174,0,1) 92%);
+background: linear-gradient(90deg, rgba(226,172,107,1) 0%, rgba(249,174,0,1) 92%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endColorstr="#f9ae00",GradientType=1);
+}
+
+.contenedor-ventajas-comerciales-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  gap: 1rem;
+
+}
+
+.contenedor-ventajas-comerciales-item img{
+  width: 5rem;
+}
 
   /* fin sobre nosotros */
