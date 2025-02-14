@@ -9,6 +9,10 @@
 .offcanvas {
     max-width: 300px; /* Ajusta el ancho a 300px */
   }
+
+.yellow {
+    background-color: #f9ae00;
+}
 /* fin nav bar */
 
 
@@ -32,7 +36,220 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen con un 50% de opacidad */
+    pointer-events: none;
+    z-index: -1;
+}
+  
+.carousel-item img {
+    position: relative;
+    z-index: -2; /* La imagen se posiciona en un nivel inferior */
+  }
+
+.carousel-caption h2{
+    color: #f9ae00;
+}
+
+.carousel-caption { /* Asegurar que el texto esté centrado correctamente */
+    opacity: 0;
+    transform: translateY(30px); /* Comienza más abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centrar completamente */
+    text-align: center;
+    width: 100%;
+    position: absolute; /* Asegura que flote sobre la imagen */
+    z-index: 1;
+    
   }
   
   
+  .carousel-item.active .carousel-caption {/* Hacer que el texto aparezca cuando el slide está activo */
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  /* button */ 
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #0f1923;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all .15s ease;
+    z-index: 10;
+  }
+  
+  .button::before,
+  .button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    border: 1px solid #7D8082;
+    transition: all .15s ease;
+  }
+  
+  .button::before {
+    top: 0;
+    border-bottom-width: 0;
+  }
+  
+  .button::after {
+    bottom: 0;
+    border-top-width: 0;
+  }
+  
+  .button:active,
+  .button:focus {
+    outline: none;
+  }
+  
+  .button:active::before,
+  .button:active::after {
+    right: 3px;
+    left: 3px;
+  }
+  
+  .button:active::before {
+    top: 3px;
+  }
+  
+  .button:active::after {
+    bottom: 3px;
+  }
+  
+  .button_lg {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0f1923;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+  }
+  
+  .button_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #0f1923;
+  }
+  
+  .button_lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #0f1923;
+    transition: all .2s ease ;
+  }
+  
+  .button_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: #f9ae00;
+    transform: skew(-15deg) ;
+    transition: all .2s ease ;
+  }
+  
+  .button_text {
+    position: relative;
+  }
+  
+  .button:hover {
+    color: #0f1923 ; 
+  }
+  
+  .button:hover .button_sl {
+    width: calc(100% + 15px) ;
+  }
+  
+  .button:hover .button_lg::after {
+    background-color: #fff ;
+  }
+  
+  
+  
+  
   /* fin carousel */
+
+  /* inicio sobre nosotros */
+
+/* Contenedor general de la sección */
+#about-us {
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  /* Logo centrado */
+  .logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-container img {
+    max-width: 200px; /* Ajusta según el tamaño de tu logo */
+  }
+  
+  /* Contenedor de todas las filas */
+  .about-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Cada fila con dos columnas */
+  .about-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Para que en dispositivos pequeños se apilen */
+  }
+  
+  /* Alterna el orden: las filas pares mostrarán el contenido invertido */
+  .about-row:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  
+  /* Cada columna ocupa el 50% y centra su contenido */
+  .about-col {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* Ajustes de las imágenes */
+  .about-col img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+
+  /* fin sobre nosotros */
