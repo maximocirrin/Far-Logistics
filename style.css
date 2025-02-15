@@ -341,6 +341,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
 .book p{
   font-size: 0.8em;
 }
+
+.book h5{
+  margin-bottom: 20px;
+}
+
 .cover {
   top: 0;
   position: absolute;
