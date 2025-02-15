@@ -11,19 +11,156 @@ body{
 /* inicio nav bar */
 .offcanvas {
     max-width: 300px; /* Ajusta el ancho a 300px */
+
   }
 
 .yellow {
-    background-color: #f9ae00;
+  background: rgb(226,172,107);
+  background: -moz-linear-gradient(90deg, rgba(226,172,107,1) 0%, rgba(249,174,0,1) 92%);
+  background: -webkit-linear-gradient(90deg, rgba(226,172,107,1) 0%, rgba(249,174,0,1) 92%);
+  background: linear-gradient(90deg, rgba(226,172,107,1) 0%, rgba(249,174,0,1) 92%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endColorstr="#f9ae00",GradientType=1);
 }
+
+.card {
+  max-width: fit-content;
+  margin-top: 50%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #e8e8e8;
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.192),
+    inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164);
+  transition: 0.5s;
+}
+
+.card:hover {
+  animation: ease-out 5s;
+  background: rgba(173, 173, 173, 0.05);
+}
+
+.card ul {
+  padding: 1rem;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.card ul li {
+  cursor: pointer;
+}
+
+.svg {
+  transition: all 0.3s;
+  /* if you find some problems change w - h : 30px*/
+  padding: 1rem;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  color: rgb(60, 58, 55);
+  fill: currentColor;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+}
+
+.text {
+  opacity: 0;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.3s;
+  color: rgb(60, 58, 55);
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  z-index: 9999;
+  box-shadow: -5px 0 1px rgba(153, 153, 153, 0.2),
+    -10px 0 1px rgba(153, 153, 153, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.082);
+}
+
+/*isometric prooyection*/
+.iso-pro {
+  transition: 0.5s;
+}
+.iso-pro:hover a > .svg {
+  transform: translate(15px, -15px);
+  border-radius: 100%;
+}
+
+.iso-pro:hover .text {
+  opacity: 1;
+  transform: translate(25px, -2px) skew(-5deg);
+}
+
+.iso-pro:hover .svg {
+  transform: translate(5px, -5px);
+}
+
+.iso-pro span {
+  opacity: 0;
+  position: absolute;
+  color: #1877f2;
+  border-color: #1877f2;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+  border-radius: 50%;
+  transition: all 0.3s;
+  height: 60px;
+  width: 60px;
+}
+
+.iso-pro:hover span {
+  opacity: 1;
+}
+
+.iso-pro:hover span:nth-child(1) {
+  opacity: 0.2;
+}
+
+.iso-pro:hover span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+
+.iso-pro:hover span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Asegúrate de que el contenedor tenga la altura necesaria, por ejemplo: */
+  height: 100%;
+}
+
+.offcanvas-body .card {
+  align-self: flex-end;
+  margin-right: 10%;
+}
+
+
+
 
 nav {
   
 background: rgba(255, 255, 255, 0.2);
+-webkit-backdrop-filter: blur(5px);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
+
 }
 /* fin nav bar */
 
@@ -386,3 +523,154 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
 }
 
   /* fin sobre nosotros */
+
+  /* Inicio servicios  */
+
+.servicios-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 15%;
+  
+}
+
+.card-container {/* Card Container (equivalente a Tailwind: w-44, h-44, bg-neutral-50, text-neutral-600, flex, flex-col, justify-center, items-center, relative, rounded-xl, overflow-hidden, shadow-md, hover:-translate-y-2, duration-500) */
+
+  width: 300px;         /* w-44 (11rem) */
+  height: 300px;        /* h-44 */
+  background-color: #fafafa;  /* bg-neutral-50 */
+  color: #4b5563;       /* text-neutral-600 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0.75rem;     /* rounded-xl */
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  transition: transform 0.5s;
+}
+
+.card-container:hover {
+  transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+}
+
+.background-svg {/* Fondo SVG (equivalente a: absolute, blur, z-10, fill-red-300, duration-500, group-hover:blur-none, group-hover:scale-105) */
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(8px);
+  z-index: 10;
+  fill: #f9ae00; /* fill-red-300 */
+  transition: filter 0.5s, transform 0.5s;
+}
+
+.card-container:hover .background-svg {
+  filter: blur(0);
+  transform: scale(1.05);
+}
+
+.card-content {/* Contenido de la Card */
+
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-img {
+  width: 30%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.card-text {
+  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.card-button {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #2563eb;
+}
+
+/* Estilos para el Pop-Up */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(255, 255, 255, 0.2);
+-webkit-backdrop-filter: blur(5px);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  align-self: center;
+  justify-self: center;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Nuevo código en styles.css para la animación del pop-up */
+.popup-content {
+  animation: popupFadeIn 0.5s ease-out;
+}
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+  /* fin servicios */
