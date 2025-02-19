@@ -51,3 +51,57 @@ document.querySelectorAll('.popup').forEach(popup => {
     }
   });
 });
+
+
+
+
+//formulario
+document.addEventListener("DOMContentLoaded", function(){
+  const form = document.getElementById("contact-form");
+  const confirmation = document.getElementById("confirmation");
+  const loading = document.getElementById("loading");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    // Mostrar el logo de carga
+    loading.style.display = "block";
+    
+    // Forzamos un pequeño retardo para que el navegador actualice la UI
+    setTimeout(function(){
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        // Ocultar el logo de carga
+        loading.style.display = "none";
+        
+        if (response.ok) {
+          form.reset();
+          confirmation.style.display = "block";
+          // Ocultar el mensaje de confirmación después de 5 segundos
+          setTimeout(() => {
+            confirmation.style.display = "none";
+          }, 5000);
+        } else {
+          return response.json().then(data => {
+            if (data.errors) {
+              alert(data.errors.map(error => error.message).join(", "));
+            } else {
+              alert("Oops! Ha ocurrido un error, intenta de nuevo.");
+            }
+          });
+        }
+      })
+      .catch(error => {
+        // Ocultar el logo de carga
+        loading.style.display = "none";
+        alert("Oops! Ha ocurrido un error, intenta de nuevo.");
+      });
+    }, 100); // Retardo de 100ms para garantizar que el loader se muestre
+  });
+});
