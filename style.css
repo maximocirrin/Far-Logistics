@@ -162,6 +162,46 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 
 }
+
+.navbar-nav .nav-link {
+  transition: all 0.3s ease-in-out;
+  padding: 10px 15px;
+}
+nav ul li {
+  margin: 0 2%;
+  position: relative; /* Necesario para efecto */
+}
+
+.navbar-nav .nav-link.active {
+  color: #ff5100;
+}
+
+
+ nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #ff5100;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+ nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+ nav ul li a.active::after {
+  width: 100%;
+}
+
 /* fin nav bar */
 
 
@@ -691,6 +731,7 @@ backdrop-filter: blur(5px);
 .form-background{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
   .form-container {
@@ -710,6 +751,14 @@ backdrop-filter: blur(5px);
                -20px -20px 60px #ffffff;
   }
   
+
+
+form{
+  display: flex;
+  flex-direction: column;
+
+}
+
  
   .titulo-form { /* Título del formulario */
     text-align: center;
@@ -775,6 +824,8 @@ backdrop-filter: blur(5px);
     top: 20px;    /* margen superior leve */
     transform: none; /* elimina cualquier transformación */
     z-index: 9999;
+    left: 0
+  ;
   }
   
   
@@ -802,7 +853,7 @@ backdrop-filter: blur(5px);
     height: 40px;
     padding-left: 10px;
     padding-top: 12px;
-    fill: rgb(33, 194, 8);
+    fill: #21c208;
     float: left;
   }
   
@@ -1171,8 +1222,13 @@ backdrop-filter: blur(5px);
   /* fin loader */
 
   .form-btn-center{
-    display: flex;
+    margin-top: 20px;
     align-self: center;
   }
 
+
+
+
+
+  
   /* fin formulario */

@@ -105,3 +105,11 @@ document.addEventListener("DOMContentLoaded", function(){
     }, 100); // Retardo de 100ms para garantizar que el loader se muestre
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+      target: "#list-example",
+      offset: 100
+  });
+});

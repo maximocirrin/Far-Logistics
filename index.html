@@ -21,7 +21,7 @@
 
 
 <!-- inicio navbar -->
-<body>
+<body  id="inicio" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="100" tabindex="0">
  
 <nav class="navbar fixed-top" >
   <div class="container-fluid">
@@ -45,19 +45,19 @@
     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Mapa del sitio</h5>
     <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+  <div  class="offcanvas-body ">
+    <ul id="list-example" class="navbar-nav justify-content-end flex-grow-1 pe-3">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link  active" aria-current="page" href="#inicio">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sobre Nosotros</a>
+        <a class="nav-link " href="#sobre-nosotros">Sobre Nosotros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Servicios</a>
+        <a class="nav-link " href="#servicios">Servicios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contacto</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
       </li>
      
       </li>
@@ -128,8 +128,8 @@
 
 <!-- inicio carousel -->
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+  <div id="carouselExampleSlidesOnly"  class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner ">
       <div class="carousel-item active">
         <img src="Img/avion.jpg" class="d-block w-100" alt="Un avion comercial volando por encima de contenedores">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
@@ -165,7 +165,7 @@
 
 <!-- inicia sobre nosotros -->
 
-<section class="about-us">
+<section class="about-us" id="sobre-nosotros">
     <div class="logo-container">
       <img src="Img/LogoSinFondo2.png" alt="Logo Far Logistics">
     </div>
@@ -242,7 +242,7 @@
 <!-- fin sobre nosotros -->
 
 <!-- Inicio servicios -->
-  <section class="servicios-container">
+  <section class="servicios-container" id="servicios">
     <!-- card 1 -->
     <div class="card-container">
       <svg class="background-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -353,15 +353,13 @@
 
 
 <!-- inicio formulario -->
-<section class="form-background">
+<section class="form-background" id="contacto">
 
-  <div class="card-form">
-    
-  </div>
+  
 
 
   <div class="form-container">
-    <form id="contact-form" action="https://formsubmit.co/7f7f075a00d7499a56c3aa697032a2a1" method="POST">
+    <form id="contact-form"  action="https://formsubmit.co/7f7f075a00d7499a56c3aa697032a2a1" method="POST">
       <h2 class="titulo-form">Cotizar</h2>
       
       <label for="nombre_apellido">Nombre y Apellido</label>
@@ -377,7 +375,7 @@
       <input type="text" id="empresa" name="empresa">
       
       <label for="modalidad_servicio">Modalidad y Servicio</label>
-      <select id="modalidad_servicio" name="modalidad_servicio" required>
+      <select id="modalidad_servicio"  name="modalidad_servicio" required>
         <option value="aereo">Aéreo</option>
         <option value="maritimo_fcl">Marítimo FCL</option>
         <option value="terrestre">Terrestre</option>
@@ -613,11 +611,7 @@
     <div id="confirmation" class="confirmation" style="display: none;">
       <div class="card-confirmation">
         <span
-          ><svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="m569.517 440.013c18.458 31.994-4.711 71.987-41.577 71.987h-479.886c-36.937 0-59.999-40.055-41.577-71.987l239.946-416.028c18.467-32.009 64.72-31.951 83.154 0zm-281.517-86.013c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-            ></path>
-          </svg>
+          ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="64px" height="64px" fill-rule="nonzero"><g fill-opacity="0" fill="#dddddd" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,256v-256h256v256z" id="bgRectangle"></path></g><g fill="#21c208" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M32,6c-14.359,0 -26,11.641 -26,26c0,14.359 11.641,26 26,26c14.359,0 26,-11.641 26,-26c0,-14.359 -11.641,-26 -26,-26zM45.121,28.121l-13,13c-0.586,0.586 -1.353,0.879 -2.121,0.879c-0.768,0 -1.535,-0.293 -2.121,-0.879l-8,-8c-1.172,-1.171 -1.172,-3.071 0,-4.242c1.172,-1.172 3.07,-1.172 4.242,0l5.879,5.879l10.879,-10.879c1.172,-1.172 3.07,-1.172 4.242,0c1.172,1.171 1.172,3.071 0,4.242z"></path></g></g></svg>
           <p>
             Su mensaje se ha enviado con éxito!
           </p></span
@@ -626,7 +620,6 @@
     </div>
   </div>
 </section>
-
 
 
 <!-- fin formulario -->
