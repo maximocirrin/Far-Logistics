@@ -215,6 +215,10 @@ nav ul li {
 
   .carousel-item {
     position: relative;
+    
+  }
+  .carousel-control-next{
+    z-index: 50;
   }
   
   .carousel-item::after {
@@ -493,8 +497,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   width: 260px;
   height: 340px;
   background-color: whitesmoke;
-  -webkit-box-shadow: 1px 1px 12px #f9ae00;
-  box-shadow: 1px 1px 12px #f9ae00;
+  -webkit-box-shadow: 1px 1px 12px #f9ae008f;
+  box-shadow: 1px 1px 12px #f9ae008d;
   -webkit-transform: preserve-3d;
   -ms-transform: preserve-3d;
   transform: preserve-3d;
@@ -536,8 +540,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   -webkit-transform-origin: 0;
   -ms-transform-origin: 0;
   transform-origin: 0;
-  -webkit-box-shadow: 1px 1px 12px #f9ae00;
-  box-shadow: 1px 1px 12px #f9ae00;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -605,7 +607,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   height: 100%;
   filter: blur(8px);
   z-index: 10;
-  fill: #f9ae00; /* fill-red-300 */
+  fill: #f9ae0093; /* fill-red-300 */
   transition: filter 0.5s, transform 0.5s;
 }
 

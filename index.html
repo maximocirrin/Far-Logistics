@@ -129,11 +129,15 @@
 <!-- inicio carousel -->
 
   <div id="carouselExampleSlidesOnly"  class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">  <!-- indicadores rectangulares--> 
+      <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
     <div class="carousel-inner ">
-      <div class="carousel-item active">
+      <div class="carousel-item active " >
         <img src="Img/avion.jpg" class="d-block w-100" alt="Un avion comercial volando por encima de contenedores">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
-            <h2 class=" fw-bold" >Soluciones logísticas para cada empresa</h2>
+            <h2 class=" fw-bold" >SOLUCIONES LOGÍSTICAS PARA CADA EMPRESA</h2>
             <p class="text-white">Contamos con el Know-How e infraestructura para proveer servicios a cada tipo de industria.</p>
             <button class="button">
                 <span class="button_lg">
@@ -143,10 +147,10 @@
             </button>
           </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" >
         <img src="Img/contenedores.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
-            <h2 class=" fw-bold">Transporte Aéreo</h2>
+            <h2 class=" fw-bold">TRANSPORTE AÉREO</h2>
             <p class="text-white">Contamos con un completo servicio de punto a punto para importación y exportación aérea, incluyendo servicios Aeropuerto-Aeropuerto y puerta a puerta.</p>
             <button class="button">
                 <span class="button_lg">
@@ -156,6 +160,15 @@
             </button>
           </div>
       </div>
+      <!-- flechitas-->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
       
     </div>
   </div>
@@ -378,6 +391,7 @@
       <select id="modalidad_servicio"  name="modalidad_servicio" required>
         <option value="aereo">Aéreo</option>
         <option value="maritimo_fcl">Marítimo FCL</option>
+        <option value="maritimo_lcl">Marítimo LCL</option>
         <option value="terrestre">Terrestre</option>
         <option value="courier_envios">Courier Envios</option>
       </select>
