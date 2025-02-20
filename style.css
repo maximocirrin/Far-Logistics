@@ -679,7 +679,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
 
 
 .card-button {
-  font-size: 1rem;
+  font-size: 0.9rem;
   width: 60%;
   letter-spacing: 2px;
   text-transform: uppercase;
