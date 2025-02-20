@@ -1,21 +1,37 @@
 
-  document.addEventListener("DOMContentLoaded", function() {
-    const observer = new IntersectionObserver(entries => {
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   const observer = new IntersectionObserver(entries => {
+  //     entries.forEach(entry => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add('visible');
+  //         observer.unobserve(entry.target); // Si la animación es de una sola vez
+  //       }
+  //     });
+  //   }, { threshold: 0.1 });
+
+  //   document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  //     observer.observe(el);
+  //   });
+  // });
+
+
+  //inview para iniciar efecto de mision vision etc
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Si la animación es de una sola vez
+        } else {
+          entry.target.classList.remove('visible');
         }
       });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
+    }, { threshold: 0.5 }); // Se activa cuando al menos el 50% del elemento es visible
+  
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+      observer.observe(element);
     });
   });
-
-
-
 
 
 
@@ -112,4 +128,29 @@ document.addEventListener("DOMContentLoaded", function () {
       target: "#list-example",
       offset: 100
   });
+});
+
+
+//inview para iniciar efecto del book
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const cover = entry.target;
+      if (entry.isIntersecting) {
+        // Si el elemento está en vista, se espera 2 segundos antes de agregar la clase
+        setTimeout(() => {
+          // Verificamos que siga en vista para evitar agregar la clase si se salió en ese tiempo
+          if (cover.getBoundingClientRect().top < window.innerHeight && cover.getBoundingClientRect().bottom > 0) {
+            cover.classList.add('in-view');
+          }
+        }, 0);
+      } else {
+        // Cuando se sale de la vista, se elimina la clase
+        cover.classList.remove('in-view');
+      }
+    });
+  }, { threshold: 0.5 }); // Ajustá el threshold según necesites
+
+  document.querySelectorAll('.cover').forEach(cover => observer.observe(cover));
 });

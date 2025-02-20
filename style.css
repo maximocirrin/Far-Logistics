@@ -440,19 +440,28 @@ nav ul li {
     max-width: 200px;
   }
 
-  .about-us-card-container{
+  .about-us-card-container {
     border-radius: 50px;
     background: #e0e0e0;
     box-shadow: 20px 20px 60px #bebebe,
-               -20px -20px 60px #ffffff;
+                -20px -20px 60px #ffffff;
     display: flex;
     justify-content: center;
     padding: 1rem;
     margin-bottom: 2rem;
-
     border: #f9ae00;
     border-style: solid;
-
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   
  .about-us-card{
@@ -469,17 +478,9 @@ nav ul li {
  }
 
  
-.animate-on-scroll {/* Estado inicial: oculto y desplazado hacia abajo */
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
 
-.animate-on-scroll.visible {/* Estado visible: se muestra y vuelve a su posición normal */
 
-  opacity: 1;
-  transform: translateY(0);
-}
+
 
 .resaltar{
   color:#f9ae00;
@@ -563,7 +564,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
 .cover {
   top: 0;
   position: absolute;
-  background-color: lightgray;
+  background-color: #e8e8e8;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -584,18 +585,19 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   justify-content: center;
 }
 
-.book:hover .cover {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: rotatey(-80deg);
-  -ms-transform: rotatey(-80deg);
-  transform: rotatey(-80deg);
+.cover img{
+  width: 90%;
 }
 
-.cover p {
-  font-size: 20px;
-  font-weight: bolder;
+
+
+.cover.in-view {
+  /* El efecto se activa después de 2 segundos */
+  transition-delay: 0s;
+  transform: rotateY(-80deg);
 }
+
+
 
   /* fin sobre nosotros */
 
@@ -608,7 +610,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-top: 15%;
+  margin-top: 50px;
   
 }
 
