@@ -450,6 +450,9 @@ nav ul li {
     padding: 1rem;
     margin-bottom: 2rem;
 
+    border: #f9ae00;
+    border-style: solid;
+
   }
   
  .about-us-card{
@@ -457,6 +460,7 @@ nav ul li {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  
  }
 
  .sobre-nosotros h3{
