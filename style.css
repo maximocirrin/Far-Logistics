@@ -834,7 +834,7 @@ backdrop-filter: blur(5px);
   padding-left: 0;
 }
 .servicios  li {
-  font-size: 0.8em;
+  font-size: clamp(0.8rem, 1vh, 1rem);
   color: #36160f;
 }
 .servicios li ul {
@@ -843,13 +843,10 @@ backdrop-filter: blur(5px);
 }
 
 .popup-content p{
-  font-size: 0.8em;
+  font-size: clamp(0.8rem, 1.8vh, 1rem); /* Se adapta al ancho de la pantalla */
   font-weight: 450;
 }
 
-.servicio-aereo{
-  font-size: 0.9em;
-}
 
 .highlight {
   font-weight: 600;
