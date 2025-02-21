@@ -10,7 +10,7 @@
   }
   
 body{
-  background-color: #e8e8e8;
+  background-color: #fffdfd;
 }
 
 
@@ -19,6 +19,7 @@ h1 h2 h3 h4 h5 h6{
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+  color: #36160f;
 }
 
 p{
@@ -26,6 +27,7 @@ p{
   font-optical-sizing: auto;
   font-weight: 350;
   font-style: normal;
+  color: #36160f;
 }
 
 .hidden-heading {
@@ -246,6 +248,11 @@ nav ul li {
 
 .carousel-caption h2{
     color: #f9ae00;
+    font-size: 1.5em;
+}
+
+.carousel-caption p{
+  font-size: 0.8em;
 }
 
 .carousel-caption { /* Asegurar que el texto esté centrado correctamente */
@@ -253,16 +260,22 @@ nav ul li {
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     width: 100%;
     z-index: 1;
+    margin-top: 10%;
     
   }
 
   /* Anula la posición por defecto de Bootstrap y centra el contenido */
 .carousel-caption {
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
-  width: 80% !important;
-  text-align: center;
+  top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
   
@@ -403,7 +416,7 @@ nav ul li {
 .about-us {/* Sección general */
     width: 100%;
     padding: 2rem;
-    background-color: #e8e8e8;
+    background-color: #ffffff;
   
   }
   
@@ -419,7 +432,7 @@ nav ul li {
 
   .about-us-card-container {
     border-radius: 50px;
-    background: #e0e0e0;
+    background: #ffffff;
     box-shadow: 20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
     display: flex;
@@ -460,7 +473,8 @@ nav ul li {
 
 
 .resaltar{
-  color:#f9ae00;
+  color:#9f6f00;
+  font-weight: 500;
 }
 
 .contenedor-ventajas-comerciales{
@@ -507,7 +521,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   border-radius: 10px;
   width: 260px;
   height: 360px;
-  background-color: whitesmoke;
+  background-color: rgb(255, 255, 255);
   -webkit-box-shadow: 1px 1px 12px #f9ae008f;
   box-shadow: 1px 1px 12px #f9ae008d;
   -webkit-transform: preserve-3d;
@@ -541,7 +555,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
 .cover {
   top: 0;
   position: absolute;
-  background-color: #e8e8e8;
+  background-color: #f6f2f2;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -589,12 +603,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   gap: 1.5rem;
   margin-top: 50px;
   
+  
 }
 
 .card-container {
 
   width: 300px;         
-  height: 400px;    
+  height: 400px;
+     
   padding-left: 0.5rem;
   padding-right: 0.5rem;    
   background-color: #fafafa; 
@@ -638,6 +654,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding-top: 1rem; 
 }
 
 .card-img {
@@ -803,14 +820,40 @@ backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 70%;
+  height: 80%;
   max-width: 300px;
   border-radius: 0.5rem;
   position: relative;
 }
 
+.servicios {
+  list-style: none;
+  padding-left: 0;
+}
+.servicios > li {
+  font-size: 0.8em;
+  color: #36160f;
+}
+.servicios li ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
 .popup-content p{
-  font-size: 0.7rem;
+  font-size: 0.8em;
+  font-weight: 450;
+}
+
+.servicio-aereo{
+  font-size: 0.85em;
+}
+
+.highlight {
+  font-weight: 600;
+  color: #000000;
+}
+.section {
+  margin-bottom: 20px;
 }
 
 .popup-content .close {
@@ -821,6 +864,7 @@ backdrop-filter: blur(5px);
   font-weight: bold;
   cursor: pointer;
 }
+
 
 /* Nuevo código en styles.css para la animación del pop-up */
 .popup-content {
@@ -1405,6 +1449,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2ac6b",endCo
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-columna{
