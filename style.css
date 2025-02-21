@@ -38,9 +38,7 @@ p{
   overflow: hidden;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-}
+
 
 
 /* inicio nav bar */
@@ -835,7 +833,7 @@ backdrop-filter: blur(5px);
   list-style: none;
   padding-left: 0;
 }
-.servicios > li {
+.servicios  li {
   font-size: 0.8em;
   color: #36160f;
 }
@@ -850,7 +848,7 @@ backdrop-filter: blur(5px);
 }
 
 .servicio-aereo{
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .highlight {
