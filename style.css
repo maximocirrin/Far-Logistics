@@ -38,6 +38,11 @@ p{
   overflow: hidden;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+
 /* inicio nav bar */
 
 .offcanvas {
