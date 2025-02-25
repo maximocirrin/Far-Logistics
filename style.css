@@ -251,11 +251,11 @@ nav ul li {
 
 .carousel-caption h2{
     color: #f9ae00;
-    font-size: 1.5em;
+    font-size: 3vh;
 }
 
 .carousel-caption p{
-  font-size: 0.8em;
+  font-size: 2vh;
 }
 
 .carousel-caption { /* Asegurar que el texto esté centrado correctamente */
@@ -277,8 +277,8 @@ nav ul li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
   
@@ -828,7 +828,7 @@ backdrop-filter: blur(5px);
   position: relative;
 
   min-height: 80vh; 
-  height: auto; /* Para que el contenido lo expanda si es necesario */
+  height: 80%; 
  
 }
 
@@ -837,7 +837,8 @@ backdrop-filter: blur(5px);
   padding-left: 0;
 }
 .servicios  li {
-  font-size: clamp(0.8rem, 1vh, 1rem);
+  /* font-size: clamp(0.8rem, 1vh, 1rem); */
+  font-size: 1.75vh;
   color: #36160f;
 }
 .servicios li ul {
@@ -846,7 +847,8 @@ backdrop-filter: blur(5px);
 }
 
 .popup-content p{
-  font-size: clamp(0.8rem, 1.8vh, 1rem); /* Se adapta al ancho de la pantalla */
+  /* font-size: clamp(0.8rem, 1.8vh, 1rem); Se adapta al ancho de la pantalla */
+  font-size: 1.75vh;
   font-weight: 450;
 }
 
